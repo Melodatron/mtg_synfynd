@@ -9,15 +9,22 @@ public class CardNameButton : MonoBehaviour
     public DeckbrewRequester requester;
     public Text output_field;
 
+    public DeckbrewCardObject lastCardObject;
+
     public void HandleRequest()
     {
-        string search_string = input_field.text;
+        string cardID = input_field.text;
 
-        requester.DoRequest(OnRequestComplete, search_string);
+        requester.RequestCardByID(OnRequestComplete, cardID);
     }
 
-    public void OnRequestComplete(bool was_success, string response)
+    public void OnRequestComplete(bool was_success, DeckbrewCardObject cardObject)
     {
-        output_field.text = response;
+        lastCardObject = cardObject;
+    }
+
+    private void Start()
+    {
+        input_field.text = "abzan-ascendancy";
     }
 }
