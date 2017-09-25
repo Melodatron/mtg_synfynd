@@ -24,22 +24,40 @@ public class DeckbrewCardObject
     //   "vintage": "legal"
     // }
 
-    // public struct Edition
-    // {
-    //     string set;
-    //     string set_id: "VMA",
-    //     string rarity: "special",
-    //     string artist: "Chris Rahn",
-    //     uint multiverse_id: 382866,
-    //     string number: "4",
-    //     string layout: "normal",
-    //     string price: {"low": 0, "median": 0, "high": 0 },
-    //     string url: "https://api.deckbrew.com/mtg/cards?multiverseid=382866",
-    //     string image_url: "https://image.deckbrew.com/mtg/multiverseid/382866.jpg",
-    //     string set_url: "https://api.deckbrew.com/mtg/sets/VMA",
-    //     string store_url: "http://store.tcgplayer.com/magic/vintage-masters/black-lotus?partner=DECKBREW",
-    //     string html_url: "https://deckbrew.com/mtg/cards/382866"
-    // }
+    [System.Serializable]
+    public class Edition
+    {
+        public string set;
+        public string set_id;
+        public string rarity;
+        public string artist;
+        public uint multiverse_id;
+        public string number;
+        public string layout;
+        public string url;
+        public string image_url;
+    }
+    public Edition[] editions;
+
+      // {
+      //   "set": "Prerelease Events",
+      //   "set_id": "pPRE",
+      //   "rarity": "special",
+      //   "artist": "Mark Winters",
+      //   "multiverse_id": 0,
+      //   "number": "88",
+      //   "layout": "normal",
+      //   "price": {
+      //     "low": 0,
+      //     "median": 0,
+      //     "high": 0
+      //   },
+      //   "url": "https://api.deckbrew.com/mtg/cards?multiverseid=0",
+      //   "image_url": "https://image.deckbrew.com/mtg/multiverseid/0.jpg",
+      //   "set_url": "https://api.deckbrew.com/mtg/sets/pPRE",
+      //   "store_url": "http://store.tcgplayer.com/magic/prerelease-events/abzan-ascendancy?partner=DECKBREW",
+      //   "html_url": "https://deckbrew.com/mtg/cards/0"
+      // },
 }
 
 
@@ -107,25 +125,6 @@ public class DeckbrewRequester : MonoBehaviour
       "vintage": "legal"
     },
     "editions": [
-      {
-        "set": "Prerelease Events",
-        "set_id": "pPRE",
-        "rarity": "special",
-        "artist": "Mark Winters",
-        "multiverse_id": 0,
-        "number": "88",
-        "layout": "normal",
-        "price": {
-          "low": 0,
-          "median": 0,
-          "high": 0
-        },
-        "url": "https://api.deckbrew.com/mtg/cards?multiverseid=0",
-        "image_url": "https://image.deckbrew.com/mtg/multiverseid/0.jpg",
-        "set_url": "https://api.deckbrew.com/mtg/sets/pPRE",
-        "store_url": "http://store.tcgplayer.com/magic/prerelease-events/abzan-ascendancy?partner=DECKBREW",
-        "html_url": "https://deckbrew.com/mtg/cards/0"
-      },
       {
         "set": "Khans of Tarkir",
         "set_id": "KTK",
